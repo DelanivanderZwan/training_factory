@@ -1,0 +1,12 @@
+footer{
+     width: 100%;
+     position: absolute;
+     bottom: 0;
+     background-color: grey;
+     height: 70px;
+}
+
+nav {
+     border-top: solid black 1px;
+     border-bottom:  solid black 1px;
+}
