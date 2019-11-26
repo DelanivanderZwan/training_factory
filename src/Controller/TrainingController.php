@@ -15,7 +15,10 @@ class TrainingController extends AbstractController
      */
     public function homepage()
     {
-        return $this->render('base.html.twig');
+        $posts = $this->getDoctrine()->getRepository('App:Training')->findAll();
+        return $this->render('base.html.twig', [
+            'posts' => $posts
+        ]);
     }
 
 }
