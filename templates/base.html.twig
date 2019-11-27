@@ -18,29 +18,7 @@
         </div>
     </div>
     </nav>
-    <div class="container-fluid">
-        {% for post in posts %}
-            <div class="card col-4 float-left">
-                {% block images %}<img class="foto" src="images/{{ post.naam }}.jpg" class="card-img-top" alt="...">{% endblock %}
-                    {{ post.naam }} <br>
-                    {{ post.description }} <br>
-                    {{ post.duration }} uur <br>
-                    &euro;{{ post.costs }} <br>
-                <br>
-                <button type="button" class="btn btn-info"><a href="">Plannen</a></button>
-            </div>
-        {% endfor %}
-    </div>
-    <span class="clearfix"></span>
 
-    <div class="text">
-        <h4>Welkom bij Trainings Centrum Den Haag</h4>
-        <br>
-        <p>Den haag Training Center is een sportschool waar onder professionele begeleiding <br>
-            in een veilige omgeving verschillende soorten martial arts, indoor bootcamp, <br>
-            en small group trainingen worden aangeboden. Hier kan je je inschrijven <br>
-            op een les of uitschrijven op een les.</p>
-    </div>
 {% endblock %}
 {% block footer %}
     <footer>
