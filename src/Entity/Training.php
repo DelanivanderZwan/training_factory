@@ -36,6 +36,12 @@ class Training
      */
     private $costs;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Lesson", inversedBy="trainings")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $lesson;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +91,18 @@ class Training
     public function setCosts(?float $costs): self
     {
         $this->costs = $costs;
+
+        return $this;
+    }
+
+    public function getLesson(): ?Lesson
+    {
+        return $this->lesson;
+    }
+
+    public function setLesson(?Lesson $lesson): self
+    {
+        $this->lesson = $lesson;
 
         return $this;
     }
