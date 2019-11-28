@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class BezoekerController extends AbstractController
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/Home", name="homepage")
      */
     public function homepageAction()
     {
@@ -24,7 +24,7 @@ class BezoekerController extends AbstractController
     }
 
     /**
-     * @Route("/2", name="aanbod")
+     * @Route("/Lesaanbod", name="aanbod")
      */
     public function aanbodAction()
     {
@@ -35,7 +35,7 @@ class BezoekerController extends AbstractController
     }
 
     /**
-     * @Route("/3", name="agenda")
+     * @Route("/Agenda", name="agenda")
      */
     public function agendaAction()
     {
@@ -43,21 +43,21 @@ class BezoekerController extends AbstractController
     }
 
     /**
-     * @Route("/4", name="contact")
+     * @Route("/Contact", name="contact")
      */
     public function contactAction()
     {
         return $this->render('bezoeker/contact.html.twig');
     }
     /**
-     * @Route("/5", name="inloggen")
+     * @Route("/Inloggen", name="inloggen")
      */
     public function inloggenAction()
     {
         return $this->render('bezoeker/login.html.twig');
     }
     /**
-     * @Route("/6", name="registreren")
+     * @Route("/Registreren", name="registreren")
      */
     public function registrerenAction()
     {

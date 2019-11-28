@@ -39,9 +39,11 @@ class Lesson
     private $max_persons;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Training", mappedBy="lesson")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Training", inversedBy="lessons")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $trainings;
+    private $training;
+
 
     public function __construct()
     {
@@ -128,6 +130,18 @@ class Lesson
                 $training->setLesson(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getTraining(): ?Training
+    {
+        return $this->training;
+    }
+
+    public function setTraining(?Training $training): self
+    {
+        $this->training = $training;
 
         return $this;
     }
