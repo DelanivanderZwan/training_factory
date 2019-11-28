@@ -14,20 +14,18 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="{{ path('homepage') }}">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Contact</a>
+            <a class="nav-item nav-link" href="{{ path('contact') }}">Contact</a>
+            <a class="nav-item nav-link" href="{{ path('aanbod') }}">Lesaanbod</a>
         </div>
+    </div>
+    <div class="login">
+        <a class="nav-item nav-link" href="{{ path('inloggen') }}">Inloggen</a>
     </div>
     </nav>
     <div class="container-fluid">
         {% for post in posts %}
             <div class="card col-4 float-left">
                 {% block images %}<img class="foto" src="images/{{ post.naam }}.jpg" class="card-img-top" alt="...">{% endblock %}
-                {{ post.naam }} <br>
-                {{ post.description }} <br>
-                {{ post.duration }} uur <br>
-                &euro;{{ post.costs }} <br>
-                <br>
-                <a href="{{ post.id }}">Plannen</a>
             </div>
         {% endfor %}
     </div>
@@ -44,7 +42,7 @@
 {% endblock %}
 {% block footer %}
     <footer>
-        Informatie
+        © Copyright - 2019
     </footer>
 {% endblock %}
 {% block javascripts %}
@@ -57,11 +55,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 {% endblock %}
 </body>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}Training Factory{% endblock %}</title>
     {% block stylesheets %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"

@@ -13,62 +13,29 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="{{ path('homepage') }}">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Contact</a>
+            <a class="nav-item nav-link active" href="{{ path('homepage') }}">Home</a>
+            <a class="nav-item nav-link" href="{{ path('contact') }}">Contact</a>
+            <a class="nav-item nav-link" href="{{ path('aanbod') }}">Lesaanbod</a>
         </div>
     </div>
-    </nav>
-    <div class="container">
-
-    <table class="table">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col">Ma</th>
-            <th scope="col">Di</th>
-            <th scope="col">Wo</th>
-            <th scope="col">Do</th>
-            <th scope="col">Vr</th>
-            <th scope="col">Za</th>
-            <th scope="col">Zo</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>{{ post.naam }}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        </tbody>
-    </table>
-
+    <div class="login">
+        <a class="nav-item nav-link" href="{{ path('inloggen') }}">Inloggen</a>
     </div>
+    </nav>
+        <div class="text-center">
+        <button type="button" class="btn btn-info">Ma</button>
+        <button type="button" class="btn btn-info">Di</button>
+        <button type="button" class="btn btn-info">Wo</button>
+        <button type="button" class="btn btn-info">Do</button>
+        <button type="button" class="btn btn-info">Vr</button>
+        <button type="button" class="btn btn-info">Za</button>
+        <button type="button" class="btn btn-info">Zo</button>
+        </div>
 
 {% endblock %}
 {% block footer %}
     <footer>
-        Informatie
+        © Copyright - 2019
     </footer>
 {% endblock %}
 {% block javascripts %}
@@ -81,6 +48,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
+
 {% endblock %}
 </body>
 <head>
