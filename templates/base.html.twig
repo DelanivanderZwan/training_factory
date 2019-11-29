@@ -4,7 +4,8 @@
 {% block body %}
     {% block header %}
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><img src="/images/logo.png" width="65" height="65">Training Centrum Den
+        <a class="navbar-brand" href="{{ path ('homepage') }}"><img src="/images/logo.png" width="65" height="65">Training
+            Centrum Den
             Haag</a>
     {% endblock %}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -13,16 +14,32 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Contact</a>
+            <a class="nav-item nav-link active" href="{{ path ('homepage') }}">Home <span
+                        class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="{{ path ('contact') }}">Contact</a>
+            <a class="nav-item nav-link" href="{{ path('aanbod') }}">Lesaanbod</a>
         </div>
     </div>
     <div class="login">
-        <a class="nav-item nav-link" href="#">Inloggen</a>
+        <a class="nav-item nav-link" href="{{ path ('inloggen') }}">Inloggen</a>
     </div>
     </nav>
 
 {% endblock %}
+        {% block agenda %}
+        {% endblock %}
+
+        {% block login %}
+        {% endblock %}
+
+        {% block index %}
+        {% endblock %}
+
+        {% block aanbod %}
+        {% endblock %}
+
+        {% block registreren %}
+        {% endblock %}
 {% block footer %}
     <footer>
         © Copyright - 2019
