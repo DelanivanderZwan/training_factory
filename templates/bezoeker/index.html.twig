@@ -1,11 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block index %}
-    <div class="container-fluid">
-        {% for post in posts %}
-            <div class="card col-4 float-left">
-                {% block images %}<img class="foto" src="images/{{ post.naam }}.jpg" class="card-img-top" alt="...">{% endblock %}
-            </div>
-        {% endfor %}
+    <div class="text-center">
+        <img src="images/middleban.png" style="width: 660px; height: 480px; "  class="img-fluid" alt="Responsive image">
     </div>
     <span class="clearfix"></span>
 

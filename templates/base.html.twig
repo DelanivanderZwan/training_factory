@@ -17,7 +17,8 @@
             <a class="nav-item nav-link active" href="{{ path ('homepage') }}">Home <span
                         class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="{{ path ('contact') }}">Contact</a>
-            <a class="nav-item nav-link" href="{{ path('aanbod') }}">Lesaanbod</a>
+            <a class="nav-item nav-link" href="{{ path('aanbod') }}">Lessen</a>
+            <a class="nav-item nav-link" href="{{ path('agenda') }}">Agenda</a>
         </div>
     </div>
     <div class="login">
@@ -26,6 +27,8 @@
     </nav>
 
 {% endblock %}
+
+
         {% block agenda %}
         {% endblock %}
 
@@ -35,20 +38,23 @@
         {% block index %}
         {% endblock %}
 
-        {% block aanbod %}
+        {% block contact %}
         {% endblock %}
+
 
         {% block registreren %}
         {% endblock %}
 <div class="container">
+    {% block aanbod %}
+    {% endblock %}
+
         {% block form %}
         {% endblock %}
 </div>
-{% block footer %}
-    <footer>
-        © Copyright - 2019
-    </footer>
-{% endblock %}
+<footer class="page-footer font-small blue fixed-bottom">
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    </div>
+</footer>
 {% block javascripts %}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
