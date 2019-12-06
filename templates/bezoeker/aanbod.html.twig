@@ -6,9 +6,9 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ post.naam }}</h5>
                     <p class="card-text">{{ post.description }} <br> {{ post.duration }} min <br> &euro;{{ post.costs }} </p>
-                    <button type="button" class="btn btn-info">Info</button>
+                    <a class="btn btn-info" href="#" role="button">Edit</a>
                 </div>
             </div>
         {% endfor %}
     <a class="btn btn-info" href="{{ path('form') }}" style="margin-left: 10px; margin-top: 5px;" role="button">Toevoegen</a>
-{% endblock %} 
+{% endblock %}
