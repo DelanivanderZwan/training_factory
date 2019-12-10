@@ -1,3 +1,7 @@
 #index:
     #path: /
     #controller: App\Controller\BezoekerController::homepage
+
+app_logout:
+  path: /logout
+  methods: GET

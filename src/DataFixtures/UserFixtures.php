@@ -23,19 +23,19 @@ class UserFixtures extends Fixture
         // $manager->persist($product);
 
         $user = new User();
-        $user->setEmail('123@gmail.com');
+        $user->setEmail('DelanivdZwan@gmail.com');
         $user->setRoles(['ROLE_ADMIN']);
         $user->setPassword($this->passwordEncoder->encodePassword(
                          $user,
-                         'WelcomeNewMember'
+                         'Trooper600'
                      ));
         $manager->persist($user);
         $user = new User();
-        $user->setEmail('456@gmail.com');
+        $user->setEmail('VitoKloots@gmail.com');
         $user->setRoles(['ROLE_USER']);
         $user->setPassword($this->passwordEncoder->encodePassword(
             $user,
-            'WelcomeNewMember'
+            'VitoKloots123'
         ));
         $manager->persist($user);
 
