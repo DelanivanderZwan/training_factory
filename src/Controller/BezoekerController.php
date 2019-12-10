@@ -53,7 +53,7 @@ class BezoekerController extends AbstractController
         return $this->render('bezoeker/contact.html.twig');
     }
     /**
-     * @Route("/Inloggen", name="inloggen")
+     * @Route("/inloggen", name="inloggen")
      */
     public function inloggenAction()
     {
