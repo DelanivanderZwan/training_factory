@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1cba83b1-9183-46b6-a101-4f1b4efd827d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/aanbod.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker/aanbod.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +156,7 @@
       <workItem from="1574667614217" duration="19077000" />
       <workItem from="1574858275992" duration="6214000" />
       <workItem from="1574929725924" duration="63627000" />
-      <workItem from="1575964132036" duration="3773000" />
+      <workItem from="1575964132036" duration="4467000" />
     </task>
     <servers />
   </component>
