@@ -46,6 +46,14 @@ class BezoekerController extends AbstractController
     }
 
     /**
+     * @Route("/Regels", name="regels")
+     */
+    public function regelsAction()
+    {
+        return $this->render('bezoeker/regels.html.twig');
+    }
+
+    /**
      * @Route("/Contact", name="contact")
      */
     public function contactAction()

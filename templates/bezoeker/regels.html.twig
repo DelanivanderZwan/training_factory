@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% block header %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ path ('homepage') }}"><img src="/images/logo.png" width="65" height="65">Training
+            Centrum Den
+            Haag</a>
+    {% endblock %}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{{ path ('homepage') }}">Home <span
+                        class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="{{ path ('contact') }}">Contact</a>
+            <a class="nav-item nav-link" href="{{ path('aanbod') }}">Lessen</a>
+            <a class="nav-item nav-link" href="{{ path('agenda') }}">Agenda</a>
+            <a class="nav-item nav-link" href="{{ path('regels') }}">Regels</a>
+        </div>
+    </div>
+    <div class="login">
+        <a class="nav-item nav-link" href="{{ path ('inloggen') }}">Inloggen</a>
+    </div>
+    </nav>
+
+    <section class="mb-4">
+
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Gedragsregels</h2>
+        <p class="text-center w-responsive mx-auto mb-5">Op onze locatie volgen wij natuurlijk gedragsregels: <br>
+            Voor goede orde, hygiëne en veiligheid zijn navolgend gedragsregels opgesteld. <br>
+            Deze gedragsregels dienen bij de judoka en zijn of haar ouders bekend te zijn. <br>
+            Dienen deze regels strikt na te leven. <br>
+            Het niet na leven van de regels kan leiden tot verwijdering uit de les of ontzegging van het volgen van de les tot dat aan de regels is voldaan. <br>
+            De regels zijn opgesteld om de orde in de kleedkamers voor aanvang van de les en er na te handhaven. Om hygiëne als het gaat om blote voeten lopen. <br>
+            Veiligheid als het gaat om voorkomen van letsel. <br>
+            Vechten gebeurt alleen op de mat en nooit op straat. <br>
+            De technieken die je worden aangeleerd mogen alleen worden gebruikt ter verdediging van jezelf of anderen. <br>
+            Je mag nooit je vechttechnieken gebruiken tegen iemand die zich niet kan verdedigen. Eer loyaliteit en trouw zijn aan de code zijn belangrijker dan welke vechttechniek, <br>
+            graduatie dan ook.</p>
+    </section>
+
+{% endblock %}
