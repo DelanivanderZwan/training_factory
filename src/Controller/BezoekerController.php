@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 use App\Entity\Training;
+use App\Form\RegistrationType;
 use Doctrine\ORM\EntityManagerInterface;
 use http\Env\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -61,7 +62,7 @@ class BezoekerController extends AbstractController
         return $this->render('bezoeker/contact.html.twig');
     }
     /**
-     * @Route("/inloggen", name="inloggen")
+     * @Route("/Login", name="Login")
      */
     public function inloggenAction()
     {
@@ -72,7 +73,10 @@ class BezoekerController extends AbstractController
      */
     public function registrerenAction()
     {
-        return $this->render('bezoeker/registreren.html.twig');
+        $form = $this->createForm(RegistrationType::class);
+        return $this->render('bezoeker/registreren.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
 }
