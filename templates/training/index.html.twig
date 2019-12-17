@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Training index{% endblock %}
+
+{% block index %}
+    <h1>Training index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Naam</th>
+                <th>Description</th>
+                <th>Duration</th>
+                <th>Costs</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for training in trainings %}
+            <tr>
+                <td>{{ training.id }}</td>
+                <td>{{ training.naam }}</td>
+                <td>{{ training.description }}</td>
+                <td>{{ training.duration }}</td>
+                <td>{{ training.costs }}</td>
+                <td>
+                    <a href="{{ path('training_show', {'id': training.id}) }}">show</a>
+                    <a href="{{ path('training_edit', {'id': training.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('training_new') }}">Create new</a>
+    {% endif %}
+{% endblock %}
