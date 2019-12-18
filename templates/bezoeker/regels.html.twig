@@ -1,32 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-
-    {% block header %}
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ path ('homepage') }}"><img src="/images/logo.png" width="65" height="65">Training
-            Centrum Den
-            Haag</a>
-    {% endblock %}
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="{{ path ('homepage') }}">Home <span
-                        class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="{{ path ('contact') }}">Contact</a>
-            <a class="nav-item nav-link" href="{{ path('aanbod') }}">Lessen</a>
-            <a class="nav-item nav-link" href="{{ path('agenda') }}">Agenda</a>
-            <a class="nav-item nav-link" href="{{ path('regels') }}">Regels</a>
-        </div>
-    </div>
-    <div class="login">
-        <a class="nav-item nav-link" href="{{ path ('inloggen') }}">Inloggen</a>
-    </div>
-    </nav>
-
+{% block regels %}
+    
+    <div class="container" style="text-align: center">
     <section class="mb-4">
 
         <h2 class="h1-responsive font-weight-bold text-center my-4">Gedragsregels</h2>
@@ -42,5 +18,5 @@
         </ul>
            </p>
     </section>
-
+    </div>
 {% endblock %}

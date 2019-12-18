@@ -22,12 +22,11 @@
             <a class="nav-item nav-link" href="{{ path('regels') }}">Regels</a>
         </div>
     </div>
-    <div class="login">
-        <a class="nav-item nav-link" href="{{ path ('app_login') }}">Inloggen</a>
-    </div>
-    <div class="logout">
-        <a class="nav-item nav-link" style="float: right" href="{{ path ('app_logout') }}">uitloggen</a>
-    </div>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <a class="nav-item nav-link" style="float: right" href="{{ path ('app_logout') }}">uitloggen</a>
+        {% else %}
+            <a class="nav-item nav-link" href="{{ path ('app_login') }}">Inloggen</a>
+        {% endif %}
     </nav>
 
 {% endblock %}

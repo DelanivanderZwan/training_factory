@@ -5,14 +5,17 @@
 {% block index %}
     {% for tr in training %}
     <div class="card" style="width: 18rem; float: left; height: 390px">
-        <img src="images/{{ training.naam }}.jpg" class="card-img-top" alt="..." style="height: 200px">
+        <img src="images/{{ tr.naam }}.jpg" class="card-img-top" alt="..." style="height: 200px">
         <div class="card-body">
-            <h5 class="card-title">{{ training.naam }}</h5>
-            <p class="card-text">{{ training.description }} <br> {{ training.duration }} min <br> &euro;{{ training.costs }} </p>
+            <h5 class="card-title">{{ tr.naam }}</h5>
+            <p class="card-text">{{ tr.description }} <br> {{ tr.duration }} min <br> &euro;{{ tr.costs }} </p>
+            <a href="{{ path('training_show', {'id': tr.id}) }}">show</a>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('training_edit', {'id': tr.id}) }}">edit</a>
+            {% endif %}
         </div>
     </div>
-                    <a href="{{ path('training_show', {'id': training.id}) }}">show</a>
-                    <a href="{{ path('training_edit', {'id': training.id}) }}">edit</a>
+
         {% else %}
             <tr>
                 <td colspan="6">no records found</td>

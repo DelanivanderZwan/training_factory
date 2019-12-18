@@ -29,7 +29,7 @@ class DirecteurController extends AbstractController
             $entityManager->persist($task);
             $entityManager->flush();
 
-            return $this->redirectToRoute('aanbod');
+            return $this->redirectToRoute('homepage');
         }
 
 
@@ -38,13 +38,16 @@ class DirecteurController extends AbstractController
         ]);
     }
 
-
-
     /**
      * @Route("/", name="task_success")
      */
     public function succesAction()
     {
         return $this->render('medewerker/training.html.twig');
+    }
+
+    public function adminDashboard()
+    {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
     }
 }

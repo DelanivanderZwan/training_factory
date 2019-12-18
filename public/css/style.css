@@ -27,8 +27,6 @@ nav {
     color: #222222;
     text-decoration: none;
     display: block;
-    border: solid black 1px;
-    border-radius: 5px;
 }
 .login-form {
      width: 340px;
