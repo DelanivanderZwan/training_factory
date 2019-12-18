@@ -21,7 +21,7 @@ class TrainingController extends AbstractController
     public function index(TrainingRepository $trainingRepository): Response
     {
         $posts = $this->getDoctrine()->getRepository('App:Training')->findAll();
-        return $this->render('training/index.html.twig', [
+        return $this->render('training/training.html.twig', [
             'posts' => $posts,
             'trainings' => $trainingRepository->findAll(),
         ]);

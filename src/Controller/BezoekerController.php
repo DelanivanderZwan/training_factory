@@ -28,13 +28,13 @@ class BezoekerController extends AbstractController
     }
 
     /**
-     * @Route("/Lesaanbod", name="aanbod")
+     * @Route("/training", name="training")
      */
-    public function aanbodAction()
+    public function trainingAction()
     {
-        $posts = $this->getDoctrine()->getRepository('App:Training')->findAll();
-        return $this->render('bezoeker/aanbod.html.twig', [
-            'posts' => $posts
+        $training = $this->getDoctrine()->getRepository('App:Training')->findAll();
+        return $this->render('training/training.html.twig', [
+            'training' => $training
         ]);
     }
 

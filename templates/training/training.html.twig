@@ -3,13 +3,12 @@
 {% block title %}Training index{% endblock %}
 
 {% block index %}
-    {% for post in posts %}
+    {% for tr in training %}
     <div class="card" style="width: 18rem; float: left; height: 390px">
-        <img src="images/{{ post.naam }}.jpg" class="card-img-top" alt="..." style="height: 200px">
+        <img src="images/{{ training.naam }}.jpg" class="card-img-top" alt="..." style="height: 200px">
         <div class="card-body">
-            <h5 class="card-title">{{ post.naam }}</h5>
-            <p class="card-text">{{ post.description }} <br> {{ post.duration }} min <br> &euro;{{ post.costs }} </p>
-            <a class="btn btn-info" href="#" role="button">Edit</a>
+            <h5 class="card-title">{{ training.naam }}</h5>
+            <p class="card-text">{{ training.description }} <br> {{ training.duration }} min <br> &euro;{{ training.costs }} </p>
         </div>
     </div>
                     <a href="{{ path('training_show', {'id': training.id}) }}">show</a>
