@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Training{% endblock %}
+{% block title %}Bewerk training{% endblock %}
 
 {% block edit %}
-    <h1>Edit Training</h1>
+    <h1>Bewerk Training</h1>
     {% if is_granted('ROLE_ADMIN') %}
     {{ include('training/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('training_index') }}">back to list</a>
+    <a href="{{ path('training_index') }}" style="float: right">Terug naar lijst</a>
     {% endif %}
     {{ include('training/_delete_form.html.twig') }}
 {% endblock %}

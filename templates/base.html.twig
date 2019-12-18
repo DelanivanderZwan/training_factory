@@ -16,10 +16,19 @@
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="{{ path ('homepage') }}">Home <span
                         class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="{{ path ('contact') }}">Contact</a>
+            {% if is_granted('ROLE_ADMIN') %}
             <a class="nav-item nav-link" href="{{ path('training') }}">Lessen</a>
-            <a class="nav-item nav-link" href="{{ path('agenda') }}">Agenda</a>
-            <a class="nav-item nav-link" href="{{ path('regels') }}">Regels</a>
+                {% else %}
+
+                {% if is_granted('ROLE_USER') %}
+                    <a class="nav-item nav-link" href="{{ path ('contact') }}">Contact</a>
+                    <a class="nav-item nav-link" href="{{ path('training') }}">Lessen</a>
+                    <a class="nav-item nav-link" href="{{ path('agenda') }}">Agenda</a>
+                    <a class="nav-item nav-link" href="{{ path('regels') }}">Regels</a>
+                    <a class="nav-item nav-link" href="{{ path('app_login') }}">Lidworden</a>
+                    {% endif %}
+            {% endif %}
+
         </div>
     </div>
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}

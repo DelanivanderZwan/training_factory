@@ -12,24 +12,24 @@
                 <td>{{ training.naam }}</td>
             </tr>
             <tr>
-                <th>Description</th>
+                <th>Beschrijving</th>
                 <td>{{ training.description }}</td>
             </tr>
             <tr>
-                <th>Duration</th>
+                <th>Duur</th>
                 <td>{{ training.duration }}</td>
             </tr>
             <tr>
-                <th>Costs</th>
+                <th>Kosten</th>
                 <td>{{ training.costs }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('training_index') }}">back to list</a>
+    <a href="{{ path('training_index') }}">Terug naar lijst</a>
 
     {% if is_granted('ROLE_ADMIN') %}
-    <a href="{{ path('training_edit', {'id': training.id}) }}">edit</a>
+    <a href="{{ path('training_edit', {'id': training.id}) }}">Bewerken</a>
     {% endif %}
 
     {{ include('training/_delete_form.html.twig') }}
