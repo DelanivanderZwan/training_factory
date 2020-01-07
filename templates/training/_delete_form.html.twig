@@ -3,7 +3,7 @@
 <form method="post" action="{{ path('training_delete', {'id': training.id}) }}" onsubmit="return confirm('Weet u zeker dat u deze les wilt verwijderen?');">
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ training.id) }}">
-    <button class="btn">Verwijderen</button>
+    <button class="btn btn-secondary" style="margin-left: 5px;">Verwijderen</button>
 </form>
 {% endif %}
 {% endblock %}

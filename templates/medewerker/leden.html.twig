@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Leden{% endblock %}
+
+{% block leden %}
+    <h1>Leden</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Naam</th>
+            <td>{{ member.name }}</td>
+        </tr>
+        <tr>
+            <th>Plaats</th>
+            <td>{{ member.place }}</td>
+        </tr>
+        <tr>
+            <th>Straat</th>
+            <td>{{ member.street }}</td>
+        </tr>
+        <tr>
+            <th>Postcode</th>
+            <td>{{ member.postal_code }}</td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}
