@@ -47,11 +47,14 @@ class DirecteurController extends AbstractController
     }
 
     /**
-     * @Route("leden", name="leden")
+     * @Route("/leden", name="leden")
      */
     public function ledenAction()
     {
-        return $this->render('medewerker/leden.html.twig');
+        $lid = $this->getDoctrine()->getRepository('App:Member')->findAll();
+        return $this->render('medewerker/leden.html.twig', [
+            'lid' => $lid
+        ]);
     }
 
     public function adminDashboard()

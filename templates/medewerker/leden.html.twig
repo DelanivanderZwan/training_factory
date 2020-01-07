@@ -3,26 +3,28 @@
 {% block title %}Leden{% endblock %}
 
 {% block leden %}
+    {{ parent() }}
     <h1>Leden</h1>
-
+    {% for leden in lid %}
     <table class="table">
         <tbody>
         <tr>
             <th>Naam</th>
-            <td>{{ member.name }}</td>
+            <td>{{ leden.name }}</td>
         </tr>
         <tr>
             <th>Plaats</th>
-            <td>{{ member.place }}</td>
+            <td>{{ leden.place }}</td>
         </tr>
         <tr>
             <th>Straat</th>
-            <td>{{ member.street }}</td>
+            <td>{{ leden.street }}</td>
         </tr>
         <tr>
             <th>Postcode</th>
-            <td>{{ member.postal_code }}</td>
+            <td>{{ leden.postal_code }}</td>
         </tr>
         </tbody>
     </table>
+    {% endfor  %}
 {% endblock %}
