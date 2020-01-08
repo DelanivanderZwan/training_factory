@@ -33,6 +33,31 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $firstname;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $preposition;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lastname;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $dateofbirth;
+
+    /**
+     * @ORM\Column(type="string", length=5)
+     */
+    private $gender;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,8 +99,8 @@ class User implements UserInterface
 
     public function setRoles(array $roles): self
     {
-
-        return $this->roles;
+        $this->roles = $roles;
+        return $this;
     }
 
     /**
@@ -108,5 +133,65 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getFirstname(): ?string
+    {
+        return $this->firstname;
+    }
+
+    public function setFirstname(string $firstname): self
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getPreposition(): ?string
+    {
+        return $this->preposition;
+    }
+
+    public function setPreposition(string $preposition): self
+    {
+        $this->preposition = $preposition;
+        
+        return $this;
+    }
+
+    public function getLastname(): ?string
+    {
+        return $this->lastname;
+    }
+
+    public function setLastname(string $lastname): self
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    public function getDateofbirth(): ?\DateTimeInterface
+    {
+        return $this->dateofbirth;
+    }
+
+    public function setDateofbirth(\DateTimeInterface $dateofbirth): self
+    {
+        $this->dateofbirth = $dateofbirth;
+
+        return $this;
+    }
+
+    public function getGender(): ?string
+    {
+        return $this->gender;
+    }
+
+    public function setGender(string $gender): self
+    {
+        $this->gender = $gender;
+
+        return $this;
     }
 }
