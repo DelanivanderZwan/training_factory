@@ -56,7 +56,6 @@ class DirecteurController extends AbstractController
             'lid' => $lid
         ]);
     }
-
     public function adminDashboard()
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');

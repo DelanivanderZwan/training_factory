@@ -35,6 +35,13 @@ class UserFixtures extends Fixture
             $user,
             'WelcomeNewMember'
         ));
+        $user = new User();
+        $user->setEmail('789@gmail.com');
+        $user->setRoles(['ROLE_INSTRUCTOR']);
+        $user->setPassword($this->passwordEncoder->encodePassword(
+            $user,
+            'WelcomeNewMember'
+        ));
         $manager->persist($user);
 
         $manager->flush();
