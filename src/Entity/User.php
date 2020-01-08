@@ -155,7 +155,7 @@ class User implements UserInterface
     public function setPreposition(string $preposition): self
     {
         $this->preposition = $preposition;
-        
+
         return $this;
     }
 
