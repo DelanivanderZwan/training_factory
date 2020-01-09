@@ -7,7 +7,7 @@
     {% if is_granted('ROLE_ADMIN') %}
     {{ include('training/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('training_index') }}" style="float: right; margin-bottom: 10px;">Terug naar lijst</a>
+    <a href="{{ path('training_index') }}" style="float: left;"><button class="btn btn-warning">Terug</button></a>
     {% endif %}
     {{ include('training/_delete_form.html.twig') }}
 {% endblock %}

@@ -1,49 +1,4 @@
 {% extends 'base.html.twig' %}
 
 {% block agenda %}
-        <!-- Nav tabs -->
-        <div class="row">
-                <ul class="nav nav-tabs float-left mt-10" id="myTab" role="tablist">
-                        <li class="nav-item">
-                                <a class="nav-link active" id="maandag-tab" data-toggle="tab" href="#maandag" role="tab"
-                                   aria-controls="maandag" aria-selected="true">Maandag</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" id="dinsdag-tab" data-toggle="tab" href="#dinsdag" role="tab"
-                                   aria-controls="dinsdag" aria-selected="false">Dinsdag</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" id="woensdag-tab" data-toggle="tab" href="#woensdag" role="tab"
-                                   aria-controls="woensdag" aria-selected="false">Woensdag</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" id="donderdag-tab" data-toggle="tab" href="#donderdag" role="tab"
-                                   aria-controls="donderdag" aria-selected="false">Donderdag</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" id="vrijdag-tab" data-toggle="tab" href="#vrijdag" role="tab"
-                                   aria-controls="vrijdag" aria-selected="false">Vrijdag</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" id="zaterdag-tab" data-toggle="tab" href="#zaterdag" role="tab"
-                                   aria-controls="zaterdag" aria-selected="false">Zaterdag</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" id="zondag-tab" data-toggle="tab" href="#zondag" role="tab"
-                                   aria-controls="zondag" aria-selected="false">Zondag</a>
-                        </li>
-                </ul>
-        </div>
-
-        <!-- Tab panes -->
-        <div class="tab-content">
-                <div class="tab-pane active" id="maandag" role="tabpanel" aria-labelledby="maandag-tab">Maandag</div>
-                <div class="tab-pane" id="dinsdag" role="tabpanel" aria-labelledby="dinsdag-tab">Dinsdag</div>
-                <div class="tab-pane" id="woensdag" role="tabpanel" aria-labelledby="woensdag-tab">Woensdag</div>
-                <div class="tab-pane" id="donderdag" role="tabpanel" aria-labelledby="donderdag-tab">Donderdag</div>
-                <div class="tab-pane" id="vrijdag" role="tabpanel" aria-labelledby="vrijdag-tab">{{ block("niks", "bezoeker/test.html.twig") }}</div>
-                <div class="tab-pane" id="zaterdag" role="tabpanel" aria-labelledby="zaterdag-tab"></div>
-                <div class="tab-pane" id="zondag" role="tabpanel" aria-labelledby="zondag-tab"></div>
-        </div>
-        </div>
 {% endblock %}

@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cba83b1-9183-46b6-a101-4f1b4efd827d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bezoeker/agenda.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker/agenda.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/add.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/beheer.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/details.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/training/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/training/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/training/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/training/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/training/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/training/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/training/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/training/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/training/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/training/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/training/training.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/training/training.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,6 +130,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1Txp7Qg1IMtHleJ6MYTGlpL6o86" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -160,6 +172,10 @@
       <workItem from="1575964132036" duration="8519000" />
       <workItem from="1576482056056" duration="8531000" />
       <workItem from="1576580219676" duration="39788000" />
+      <workItem from="1578555419059" duration="3137000" />
+      <workItem from="1578559898317" duration="38000" />
+      <workItem from="1578559978234" duration="229000" />
+      <workItem from="1578560248404" duration="793000" />
     </task>
     <servers />
   </component>
