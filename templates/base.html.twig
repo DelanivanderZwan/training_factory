@@ -16,29 +16,24 @@
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="{{ path ('homepage') }}">Home <span
                         class="sr-only">(current)</span></a>
-            {% if is_granted('ROLE_ADMIN') %}
+            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_INSTRUCTOR') %}
             <a class="nav-item nav-link" href="{{ path('training') }}">Lessen</a>
                 <a class="nav-item nav-link" href="{{ path('leden') }}">Leden</a>
                 {% else %}
-
-                {% if is_granted('ROLE_USER') %}
                     <a class="nav-item nav-link" href="{{ path ('contact') }}">Contact</a>
                     <a class="nav-item nav-link" href="{{ path('training') }}">Lessen</a>
                     <a class="nav-item nav-link" href="{{ path('regels') }}">Regels</a>
-                    {% endif %}
             {% endif %}
-
         </div>
     </div>
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            <a class="nav-item nav-link" style="float: right" href="{{ path ('app_logout') }}">uitloggen</a>
+            <a href="{{ path ('profileedit') }}"><button class="btn btn-warning" style="margin-right: 5px;">profiel bewerken</button></a>
+            <a href="{{ path ('app_logout') }}"><button class="btn btn-danger">uitloggen</button></a>
         {% else %}
-            <a class="nav-item nav-link" href="{{ path ('app_login') }}">Inloggen</a>
+            <a class="nav-item nav-link" href="{{ path ('app_login') }}"><button class="btn btn-success">Inloggen</button></a>
         {% endif %}
     </nav>
-
 {% endblock %}
-
 
         {% block agenda %}
         {% endblock %}
@@ -72,12 +67,15 @@
 
         {% block leden %}
         {% endblock %}
+
+        {% block inschrijving %}
+        {% endblock %}
 <div class="container">
     {% block aanbod %}
     {% endblock %}
 
-        {% block form %}
-        {% endblock %}
+    {% block form %}
+    {% endblock %}
 </div>
 <footer class="page-footer font-small blue fixed-bottom">
     <div class="footer-copyright text-center py-3">© 2019 Copyright:

@@ -3,17 +3,13 @@
 
 namespace App\Controller;
 
-use App\Entity\Training;
 use App\Entity\User;
 use App\Form\RegistrationType;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Routing\Annotation\Route;
 
 
 class BezoekerController extends AbstractController
@@ -49,6 +45,14 @@ class BezoekerController extends AbstractController
     }
 
     /**
+     * @Route("/Inschrijven", name="inschrijven")
+     */
+    public function inschrijvingAction()
+    {
+        return $this->render('bezoeker/inschrijving.html.twig');
+    }
+
+    /**
      * @Route("/Regels", name="regels")
      */
     public function regelsAction()
@@ -70,6 +74,34 @@ class BezoekerController extends AbstractController
     {
         return $this->render('bezoeker/login.html.twig');
     }
+
+    /**
+     * @Route("/ProfileEdit", name="profileedit", methods={"GET","POST"})
+     */
+    public function profileEditAction(Request $request): Response
+    {
+        $user = $this->getUser();
+        $password = $user->getPassword();
+        $form = $this->createForm(RegistrationType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $user = $form->getData();
+            $user->setPassword($password);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('homepage');
+        }
+
+        return $this->render('bezoeker/registreren.html.twig', [
+            'user' => $user,
+            'form' => $form->createView(),
+            'title' => 'Profiel bewerken'
+        ]);
+    }
+
     /**
      * @Route("/Registreren", name="registreren")
      */

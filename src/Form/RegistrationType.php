@@ -12,6 +12,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
+
 class RegistrationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -20,14 +22,16 @@ class RegistrationType extends AbstractType
             ->add('email', EmailType::class)
             ->add('password', PasswordType::class)
             ->add('firstname', TextType::class)
-            ->add('preposition', TextType::class)
+            ->add('preposition', TextType::class, [
+                'required' => false,
+            ])
             ->add('lastname', TextType::class)
             ->add('dateofbirth', BirthdayType::class)
             ->add('gender', ChoiceType::class, array(
                 'choices' => array(
                     'Man' => 'Man',
                     'Vrouw' => 'Vrouw',
-                    'Geen' => 'Geen',
+                    'Zeg ik liever niet' => 'Zeg ik liever niet',
                 )
             ))
             ->add('Registeren', SubmitType::class);
