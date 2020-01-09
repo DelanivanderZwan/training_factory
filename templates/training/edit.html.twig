@@ -4,7 +4,7 @@
 
 {% block edit %}
     <h1>Bewerk Training</h1>
-    {% if is_granted('ROLE_ADMIN') %}
+    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_INSTRUCTOR') %}
     {{ include('training/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('training_index') }}" style="float: left;"><button class="btn btn-warning">Terug</button></a>
