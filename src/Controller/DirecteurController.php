@@ -4,6 +4,7 @@
 // src/Controller/TaskController.php
 namespace App\Controller;
 
+use App\Entity\Instructor;
 use App\Entity\Training;
 use App\Form\Type\TrainingType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -65,6 +66,20 @@ class DirecteurController extends AbstractController
         return $this->render('medewerker/instructeuroverzicht.html.twig', [
             'instructeur' => $instructor
         ]);
+    }
+
+    /**
+     * @Route("/{id}", name="instructor_delete", methods={"POST"})
+     */
+    public function Instructordelete(Request $request, Instructor $instructor): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$instructor->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($instructor);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('admin_instructoroverzicht');
     }
 
     /**

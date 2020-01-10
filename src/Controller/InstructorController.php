@@ -4,6 +4,7 @@
 // src/Controller/TaskController.php
 namespace App\Controller;
 
+use App\Entity\Instructor;
 use App\Entity\Training;
 use App\Form\Type\TrainingType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;

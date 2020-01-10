@@ -5,10 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DirecteurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DirecteurController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/InstructorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InstructorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/medewerker/instructeuroverzicht.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/instructeuroverzicht.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/leden.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/leden.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +170,7 @@
       <workItem from="1578560248404" duration="6937000" />
       <workItem from="1578569732684" duration="498000" />
       <workItem from="1578570272375" duration="4145000" />
-      <workItem from="1578641633948" duration="10585000" />
+      <workItem from="1578641633948" duration="12828000" />
     </task>
     <servers />
   </component>
