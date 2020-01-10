@@ -95,7 +95,7 @@ class BezoekerController extends AbstractController
             return $this->redirectToRoute('homepage');
         }
 
-        return $this->render('bezoeker/registreren.html.twig', [
+        return $this->render('bezoeker/profiledit.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
             'title' => 'Profiel bewerken'

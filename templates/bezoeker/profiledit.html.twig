@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block profileedit %}
+    {{ parent() }}
+    <div class="container" style="margin-top: 2%;">
+        <h2 style="text-align: center;">Profiel bewerken</h2>
+        <table class="table table-borderless">
+            <tbody>
+            <tr><td>{{ form(form) }}</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

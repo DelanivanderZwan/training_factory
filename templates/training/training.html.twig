@@ -11,7 +11,7 @@
             <h5 class="card-title">{{ tr.naam }}</h5>
             <p class="card-text">{{ tr.description }}</p>
             <a href="{{ path('training_show', {'id': tr.id}) }}" style="text-decoration: none"><button class="btn btn-info">Informatie</button></a>
-            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_INSTRUCTOR')%}
+            {% if is_granted('ROLE_INSTRUCTOR') %}
                 <a href="{{ path('training_edit', {'id': tr.id}) }}" style="text-decoration: none"><button class="btn btn-warning">Bewerken</button></a>
                 <a href="{{ path('training_delete', {'id': tr.id}) }}" style="text-decoration: none"><button class="btn btn-danger">Verwijderen</button></a>
             {% elseif is_granted('ROLE_USER') %}
@@ -25,7 +25,7 @@
                 <h4><td colspan="6">Geen lessen gevonden</td></h4>
             </tr>
         {% endfor %}
-    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_INSTRUCTOR')%}
+    {% if is_granted('ROLE_INSTRUCTOR') %}
     <a href="{{ path('training_new') }}" style="float: right; text-decoration: none; margin-right: 10px;"><button class="btn btn-secondary">Les aanmaken</button></a>
     {% endif %}
 {% endblock %}
