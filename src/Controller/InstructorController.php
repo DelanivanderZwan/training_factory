@@ -6,10 +6,18 @@ namespace App\Controller;
 
 use App\Entity\Training;
 use App\Form\Type\TrainingType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
+
+///**
+// * Require ROLE_INSTRUCTOR for *every* controller method in this class.
+// * @Route("/instructor", name="instructor_")
+// * @IsGranted("ROLE_INSTRUCTOR")
+// */
 
 class InstructorController extends AbstractController
 {
@@ -46,16 +54,6 @@ class InstructorController extends AbstractController
         return $this->render('medewerker/training.html.twig');
     }
 
-    /**
-     * @Route("/leden", name="leden")
-     */
-    public function ledenAction()
-    {
-        $lid = $this->getDoctrine()->getRepository('App:Member')->findAll();
-        return $this->render('medewerker/leden.html.twig', [
-            'lid' => $lid
-        ]);
-    }
     public function adminDashboard()
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');

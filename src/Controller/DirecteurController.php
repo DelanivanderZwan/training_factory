@@ -6,10 +6,20 @@ namespace App\Controller;
 
 use App\Entity\Training;
 use App\Form\Type\TrainingType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Form\UserType;
+use App\Entity\User;
+
+
+/**
+ * Require ROLE_ADMIN for *every* controller method in this class.
+ * @Route("/admin", name="admin_")
+ * @IsGranted("ROLE_ADMIN")
+ */
 
 class DirecteurController extends AbstractController
 {
@@ -47,15 +57,42 @@ class DirecteurController extends AbstractController
     }
 
     /**
-     * @Route("/leden", name="leden")
+     * @Route("/InstructorOverzicht", name="instructoroverzicht")
      */
-    public function ledenAction()
+    public function InstructorOverzichtAction()
     {
-        $lid = $this->getDoctrine()->getRepository('App:Member')->findAll();
-        return $this->render('medewerker/leden.html.twig', [
-            'lid' => $lid
+        $instructor = $this->getDoctrine()->getRepository(User::class)->findByRole('ROLE_INSTRUCTOR');
+        return $this->render('medewerker/instructeuroverzicht.html.twig', [
+            'instructeur' => $instructor
         ]);
     }
+
+    /**
+     * @Route("/{id}", name="user_delete", methods={"DELETE"})
+     */
+    public function delete(Request $request, User $user): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($user);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('admin_ledenoverzicht');
+    }
+
+    /**
+     * @Route("/LedenOverzicht", name="ledenoverzicht")
+     */
+    public function LedenAction()
+    {
+        $lid = $this->getDoctrine()->getRepository(User::class)->findByRole('ROLE_USER');
+        return $this->render('medewerker/leden.html.twig', [
+            'leden' => $lid
+        ]);
+    }
+
+
     public function adminDashboard()
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');

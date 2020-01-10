@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block instructor %}
+{#    <a type="button" class="btn btn-secondary" href="{{ path('') }}">Instructeur toevoegen</a>#}
+{% for instructor in instructeur %}
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">Naam</th>
+            <th scope="col">Email</th>
+            <th scope="col">Tussenvoegsel</th>
+            <th scope="col">Achternaam</th>
+            <th scope="col">Geslacht</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ instructor.firstname }}</td>
+            <td>{{ instructor.email }}</td>
+            <td{{ instructor.preposition }}></td>
+            <td>{{ instructor.lastname }}</td>
+            <td>{{ instructor.gender }}</td>
+        </tr>
+        </tbody>
+    </table>
+{% endfor %}
+
+
+{% endblock %}
