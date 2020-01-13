@@ -4,7 +4,6 @@
     <list default="true" id="1cba83b1-9183-46b6-a101-4f1b4efd827d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DirecteurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DirecteurController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/InstructorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InstructorController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/medewerker/instructeuroverzicht.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/instructeuroverzicht.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -170,7 +169,8 @@
       <workItem from="1578560248404" duration="6937000" />
       <workItem from="1578569732684" duration="498000" />
       <workItem from="1578570272375" duration="4145000" />
-      <workItem from="1578641633948" duration="12828000" />
+      <workItem from="1578641633948" duration="13336000" />
+      <workItem from="1578910036682" duration="3026000" />
     </task>
     <servers />
   </component>

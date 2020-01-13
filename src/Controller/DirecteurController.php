@@ -6,6 +6,8 @@ namespace App\Controller;
 
 use App\Entity\Instructor;
 use App\Entity\Training;
+use App\Form\InstructorType;
+use App\Form\RegistrationType;
 use App\Form\Type\TrainingType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,6 +16,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\UserType;
 use App\Entity\User;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
 /**
@@ -65,6 +68,32 @@ class DirecteurController extends AbstractController
         $instructor = $this->getDoctrine()->getRepository(User::class)->findByRole('ROLE_INSTRUCTOR');
         return $this->render('medewerker/instructeuroverzicht.html.twig', [
             'instructeur' => $instructor
+        ]);
+    }
+
+    /**
+     * @Route("/NewInstructor", name="instructor_new", methods={"GET","POST"})
+     */
+    public function newInstructorAction(Request $request):Response
+    {
+        $instructor = new User();
+
+        $form = $this->createForm(InstructorType::class, $instructor);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $user = $form->getData();
+            $user->setRoles(['ROLE_INSTRUCTOR']);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('homepage');
+        }
+
+        return $this->render('bezoeker/registreren.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
 
