@@ -49,7 +49,10 @@ class BezoekerController extends AbstractController
      */
     public function inschrijvingAction()
     {
-        return $this->render('bezoeker/inschrijving.html.twig');
+        $inschrijven = $this->getDoctrine()->getRepository('App:Training')->findAll();
+        return $this->render('bezoeker/inschrijving.html.twig', [
+            'inschrijving' => $inschrijven
+        ]);
     }
 
     /**

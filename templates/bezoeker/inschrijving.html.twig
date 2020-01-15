@@ -2,8 +2,16 @@
 
 {% block title %}Inschrijven{% endblock %}
 
-{% block inschrijving %}
-
-
-
+{% block inschrijven %}
+    {% for inschrijven in inschrijving %}
+    <div class="container" style="margin: 10px;">
+    <div class="card" style="width: 25rem; float: left; height: 390px">
+    <img src="images/{{ inschrijven.naam }}.jpg" class="card-img-top" alt="..." style="height: 200px">
+    <div class="card-body">
+    <h5 class="card-title">{{ inschrijven.naam }}</h5>
+        <a href="#"><button class="btn btn-info">Plannen</button></a>
+    </div>
+    </div>
+    </div>
+    {% endfor %}
 {% endblock %}

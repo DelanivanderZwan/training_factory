@@ -9,6 +9,7 @@
         <th scope="col">Tussenvoegsel</th>
         <th scope="col">Achternaam</th>
         <th scope="col">Geslacht</th>
+        <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
@@ -30,5 +31,7 @@
 {% endfor %}
     </tbody>
     </table>
+    {% if is_granted('ROLE_ADMIN') %}
     <a href="{{ path('admin_instructor_new') }}"><button class="btn btn-success" style="float: right; margin-right: 5px;">Instructeur toevoegen</button></a>
+    {% endif %}
 {% endblock %}
