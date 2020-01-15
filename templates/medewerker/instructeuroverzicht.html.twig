@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block instructor %}
-{#    <a type="button" class="btn btn-secondary" href="{{ path('') }}">Instructeur toevoegen</a>#}
     <table class="table table-bordered">
     <thead>
     <tr>
@@ -31,5 +30,5 @@
 {% endfor %}
     </tbody>
     </table>
-    {{form(form)}}
+    <a href="{{ path('admin_instructor_new') }}"><button class="btn btn-success" style="float: right; margin-right: 5px;">Instructeur toevoegen</button></a>
 {% endblock %}
