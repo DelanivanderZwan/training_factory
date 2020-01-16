@@ -2,11 +2,22 @@
 {% block registreren %}
     {{ parent() }}
     <div class="container" style="margin-top: 2%;">
-        <h2 style="text-align: center;">Registeren</h2>
+        {% if is_granted('ROLE_ADMIN') %}
+        <h2 style="text-align: center;">Instructeur toevoegen</h2>
+            <table class="table table-borderless">
+                <tbody>
+                <tr><td>{{ form(form) }}</td></tr>
+                </tbody>
+            </table>
+            </div>
+        {% else %}
+        <h2 style="text-align: center;">Registreren</h2>
         <table class="table table-borderless">
             <tbody>
             <tr><td>{{ form(form) }}</td></tr>
             </tbody>
         </table>
     </div>
+    {% endif %}
 {% endblock %}
+
