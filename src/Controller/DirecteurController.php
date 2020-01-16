@@ -74,7 +74,7 @@ class DirecteurController extends AbstractController
     /**
      * @Route("/newInstructor", name="instructor_new", methods={"GET","POST"})
      */
-    public function newInstructorAction(Request $request):Response
+    public function newInstructorAction(Request $request, UserPasswordEncoderInterface $passwordEncoder):Response
     {
         $instructor = new User();
         $form = $this->createForm(InstructorType::class, $instructor);
@@ -82,6 +82,10 @@ class DirecteurController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $form->getData();
             $user->setRoles(['ROLE_INSTRUCTOR']);
+            $user->setPassword($passwordEncoder->encodePassword(
+                $user,
+                $user->getPassword()
+            ));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
