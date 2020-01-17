@@ -21,6 +21,24 @@ class Registration
      */
     private $payment;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Lesson", inversedBy="registrations")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $lesson_id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Member", inversedBy="registration_id")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $member;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Member", inversedBy="registrations")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $member_id;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +52,42 @@ class Registration
     public function setPayment(?bool $payment): self
     {
         $this->payment = $payment;
+
+        return $this;
+    }
+
+    public function getLessonId(): ?Lesson
+    {
+        return $this->lesson_id;
+    }
+
+    public function setLessonId(?Lesson $lesson_id): self
+    {
+        $this->lesson_id = $lesson_id;
+
+        return $this;
+    }
+
+    public function getMember(): ?Member
+    {
+        return $this->member;
+    }
+
+    public function setMember(?Member $member): self
+    {
+        $this->member = $member;
+
+        return $this;
+    }
+
+    public function getMemberId(): ?Member
+    {
+        return $this->member_id;
+    }
+
+    public function setMemberId(?Member $member_id): self
+    {
+        $this->member_id = $member_id;
 
         return $this;
     }

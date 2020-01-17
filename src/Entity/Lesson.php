@@ -44,10 +44,22 @@ class Lesson
      */
     private $training;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Registration", mappedBy="lesson_id")
+     */
+    private $registrations;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Instructor", inversedBy="lessons")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $instructor_id;
+
 
     public function __construct()
     {
         $this->trainings = new ArrayCollection();
+        $this->registrations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -142,6 +154,49 @@ class Lesson
     public function setTraining(?Training $training): self
     {
         $this->training = $training;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Registration[]
+     */
+    public function getRegistrations(): Collection
+    {
+        return $this->registrations;
+    }
+
+    public function addRegistration(Registration $registration): self
+    {
+        if (!$this->registrations->contains($registration)) {
+            $this->registrations[] = $registration;
+            $registration->setLessonId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRegistration(Registration $registration): self
+    {
+        if ($this->registrations->contains($registration)) {
+            $this->registrations->removeElement($registration);
+            // set the owning side to null (unless already changed)
+            if ($registration->getLessonId() === $this) {
+                $registration->setLessonId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getInstructorId(): ?Instructor
+    {
+        return $this->instructor_id;
+    }
+
+    public function setInstructorId(?Instructor $instructor_id): self
+    {
+        $this->instructor_id = $instructor_id;
 
         return $this;
     }
