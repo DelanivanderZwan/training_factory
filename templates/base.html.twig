@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
+
 {% block body %}
     {% block header %}
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -24,7 +25,9 @@
                     <a class="nav-item nav-link" href="{{ path ('contact') }}">Contact</a>
                     <a class="nav-item nav-link" href="{{ path('training') }}">Lessen</a>
                     <a class="nav-item nav-link" href="{{ path('regels') }}">Regels</a>
-                    <a class="nav-item nav-link" href="{{ path('inschrijven') }}">Inschrijven</a>
+            {% endif %}
+            {% if is_granted('ROLE_USER') %}
+            <a class="nav-item nav-link" href="{{ path('inschrijven') }}">Inschrijven</a>
             {% endif %}
         </div>
     </div>

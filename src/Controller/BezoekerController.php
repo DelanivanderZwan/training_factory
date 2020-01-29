@@ -37,14 +37,6 @@ class BezoekerController extends AbstractController
     }
 
     /**
-     * @Route("/Agenda", name="agenda")
-     */
-    public function agendaAction()
-    {
-        return $this->render('bezoeker/agenda.html.twig');
-    }
-
-    /**
      * @Route("/Inschrijven", name="inschrijven")
      */
     public function inschrijvingAction()

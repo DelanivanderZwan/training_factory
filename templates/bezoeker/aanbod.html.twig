@@ -11,6 +11,8 @@
         {% endfor %}
     {% if is_granted('ROLE_ADMIN') %}
         <a class="btn btn-info" href="{{ path('form') }}" style="margin-left: 10px; margin-top: 5px;" role="button">Toevoegen</a>
+        {% else %}
+            <a class="btn btn-info" href="#" style="margin-left: 10px; margin-top: 5px;" role="button">Inschrijven</a>
     {% endif %}
     <button class="btn btn-lg btn-secondary" style="float: right" type="submit"><a class="nav-item nav-link" href="{{ path ('app_logout') }}">uitloggen</a></button>
 {% endblock %}
