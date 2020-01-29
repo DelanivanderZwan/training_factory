@@ -28,16 +28,16 @@ class Registration
     private $lesson_id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Member", inversedBy="registration_id")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\lesson", inversedBy="registrations")
      */
-    private $member;
+    private $lesson;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Member", inversedBy="registrations")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="registrations")
      */
-    private $member_id;
+    private $user;
+
+
 
     public function getId(): ?int
     {
@@ -68,26 +68,26 @@ class Registration
         return $this;
     }
 
-    public function getMember(): ?Member
+    public function getLesson(): ?lesson
     {
-        return $this->member;
+        return $this->lesson;
     }
 
-    public function setMember(?Member $member): self
+    public function setLesson(?lesson $lesson): self
     {
-        $this->member = $member;
+        $this->lesson = $lesson;
 
         return $this;
     }
 
-    public function getMemberId(): ?Member
+    public function getUser(): ?User
     {
-        return $this->member_id;
+        return $this->user;
     }
 
-    public function setMemberId(?Member $member_id): self
+    public function setUser(?User $user): self
     {
-        $this->member_id = $member_id;
+        $this->user = $user;
 
         return $this;
     }

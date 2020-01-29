@@ -44,16 +44,17 @@ class Lesson
      */
     private $training;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Registration", mappedBy="lesson_id")
-     */
-    private $registrations;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Instructor", inversedBy="lessons")
      * @ORM\JoinColumn(nullable=false)
      */
     private $instructor_id;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Registration", mappedBy="lesson")
+     */
+    private $registrations;
 
 
     public function __construct()
