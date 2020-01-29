@@ -3,6 +3,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Training;
 use App\Entity\User;
 use App\Form\RegistrationType;
 use Symfony\Component\HttpFoundation\Request;
@@ -41,9 +42,9 @@ class BezoekerController extends AbstractController
      */
     public function inschrijvingAction()
     {
-        $inschrijven = $this->getDoctrine()->getRepository('App:Training')->findAll();
+        $trainingen = $this->getDoctrine()->getRepository(Training::class)->findAll();
         return $this->render('bezoeker/inschrijving.html.twig', [
-            'inschrijving' => $inschrijven
+            'trainingen' => $trainingen
         ]);
     }
 

@@ -62,9 +62,11 @@ class User implements UserInterface
     private $gender;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Registration", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="App\Entity\Registration", mappedBy="userid")
      */
     private $registrations;
+
+
 
 
     public function __construct()
