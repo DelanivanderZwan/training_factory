@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cba83b1-9183-46b6-a101-4f1b4efd827d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/user/inschrijving.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BezoekerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TrainingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TrainingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/inschrijving.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/profiledit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profiledit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/test.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/training/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/training/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/training/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/training/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/training/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/training/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/training/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/training/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/training/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/training/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/training/training.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/training/training.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/inschrijving.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/inschrijving.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +174,7 @@
       <workItem from="1578910036682" duration="3875000" />
       <workItem from="1579074589958" duration="22284000" />
       <workItem from="1580110747523" duration="11203000" />
-      <workItem from="1580217100326" duration="16321000" />
+      <workItem from="1580217100326" duration="18921000" />
     </task>
     <servers />
   </component>
