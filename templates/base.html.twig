@@ -23,16 +23,16 @@
                 <a class="nav-item nav-link" href="{{ path('admin_instructoroverzicht') }}">Instructeurs</a>
                 {% else %}
                     <a class="nav-item nav-link" href="{{ path ('contact') }}">Contact</a>
-                    <a class="nav-item nav-link" href="{{ path('training') }}">Lessen</a>
+                    <a class="nav-item nav-link" href="{{ path('user_training') }}">Lessen</a>
                     <a class="nav-item nav-link" href="{{ path('regels') }}">Regels</a>
             {% endif %}
             {% if is_granted('ROLE_USER') %}
-            <a class="nav-item nav-link" href="{{ path('inschrijven') }}">Inschrijven</a>
+            <a class="nav-item nav-link" href="{{ path('user_inschrijven') }}">Inschrijvingen</a>
             {% endif %}
         </div>
     </div>
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            <a href="{{ path ('profileedit') }}"><button class="btn btn-warning" style="margin-right: 5px;">profiel bewerken</button></a>
+            <a href="{{ path ('user_profileedit_') }}"><button class="btn btn-warning" style="margin-right: 5px;">profiel bewerken</button></a>
             <a href="{{ path ('app_logout') }}"><button class="btn btn-danger">uitloggen</button></a>
         {% else %}
             <a class="nav-item nav-link" href="{{ path ('app_login') }}"><button class="btn btn-success">Inloggen</button></a>

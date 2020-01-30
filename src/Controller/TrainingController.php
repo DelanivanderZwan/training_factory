@@ -21,7 +21,7 @@ class TrainingController extends AbstractController
     public function index(TrainingRepository $trainingRepository): Response
     {
         $posts = $this->getDoctrine()->getRepository('App:Training')->findAll();
-        return $this->render('training/training.html.twig', [
+        return $this->render('user/training/training.html.twig', [
             'posts' => $posts,
             'trainings' => $trainingRepository->findAll(),
         ]);
@@ -44,7 +44,7 @@ class TrainingController extends AbstractController
             return $this->redirectToRoute('training_index');
         }
 
-        return $this->render('training/new.html.twig', [
+        return $this->render('medewerker/training/new.html.twig', [
             'training' => $training,
             'form' => $form->createView(),
         ]);
@@ -55,7 +55,7 @@ class TrainingController extends AbstractController
      */
     public function show(Training $training): Response
     {
-        return $this->render('training/show.html.twig', [
+        return $this->render('user/training/show.html.twig', [
             'training' => $training,
         ]);
     }
@@ -74,7 +74,7 @@ class TrainingController extends AbstractController
             return $this->redirectToRoute('training_index');
         }
 
-        return $this->render('training/edit.html.twig', [
+        return $this->render('medewerker/training/edit.html.twig', [
             'training' => $training,
             'form' => $form->createView(),
         ]);
